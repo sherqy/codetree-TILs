@@ -13,8 +13,9 @@ for i in range(n):
     
     for o in range(n):
         p.append(k[o][i])
+
     
-    for j in range(len(p) - m):
+    for j in range(len(p) - m + 1):
         if len(set(p[j : j + m])) == 1:
             answer += 1
             break
