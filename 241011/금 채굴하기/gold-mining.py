@@ -33,7 +33,8 @@ while k * k + (k + 1) * (k + 1) <= g * m:
                     if a + x >= 0 and a + x < n and b + y >= 0 and b + y < n:
                         if f[a + x][b + y] == 1:
                             maximum += 1
-                total = maximum if maximum >= total else total
+                    if m * maximum >= k * k + (k + 1) * (k + 1):
+                        total = maximum if maximum >= total else total
         answer.append((k, total))
     k += 1
 
