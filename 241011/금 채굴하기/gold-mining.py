@@ -9,10 +9,9 @@ k = 0
 answer = []
 total = 0
 dxdy = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+direction = []
 
 while k * k + (k + 1) * (k + 1) <= g * m:
-    direction = []
-
     if k == 0:  #k가 0일 경우에는 확실히 답이 1
         answer.append((0, 1))
     else:       #k가 0이 아닐 경우에는 마름모에 따라 탐색
@@ -24,6 +23,7 @@ while k * k + (k + 1) * (k + 1) <= g * m:
                 y += l
             direction.append((x, y))
         direction = list(set(direction))    #중복 제거
+
         #마름모 크기에 따라 탐색하는 과정
         for a in range(n):
             for b in range(n):
