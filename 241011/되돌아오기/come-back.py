@@ -17,7 +17,7 @@ for i in range(n):
         init[0], init[1] = init[0] + dxs[direction[d]], init[1] + dys[direction[d]]
         answer += 1
 
-        if init[0] == 0 and init[1] == 0:
+        if init[0] == 0 and init[1] == 0 and flag == 0:
             print(answer)
             flag = 1
             break
