@@ -9,7 +9,7 @@ direction = {
     'L' : 3
 }
 
-dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
+dx, dy = [0, 1, 0, -1], [-1, 0, 1, 0]
 
 def in_range(x, y):
     return x <= n and x >= 1 and y <= n and y >= 1
