@@ -13,7 +13,7 @@ min_idx = -1
 for i in range(0, n - 1):
     if m[i][2] == "Rain":
         if min_idx < 0:
-            min_idx = 1
+            min_idx = i
         else:
             min_idx = i if m[i][0] < m[min_idx][0] else min_idx
 
