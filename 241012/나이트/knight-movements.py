@@ -30,6 +30,6 @@ def bfs():
             if in_range(new_x, new_y) and not visited[new_y][new_x]:
                 push(new_x, new_y, weight[y][x])
 
-push(r1 - 1, c1 - 1, 0)
+push(c1 - 1, r1 - 1, 0)
 bfs()
 print(weight[r2 - 1][c2 - 1] - 1)
