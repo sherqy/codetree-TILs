@@ -5,7 +5,7 @@ segments = [tuple(map(int, input().split())) for _ in range(n)]
 line = [0] * 100
 
 for i, j in segments:
-    for k in range(i - 1, j + 1):
+    for k in range(i - 1, j):
         line[k] += 1
 
 print(max(line))
