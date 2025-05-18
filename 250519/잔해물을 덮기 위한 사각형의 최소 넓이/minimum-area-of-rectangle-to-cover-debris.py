@@ -48,4 +48,12 @@ for i in range(2000, -1, -1):
     if max_flag == 1:
         break
 
-print(x_pos * (y_max - y_min + 1))
+large = 0
+
+for i in cross:
+    large += sum(i)
+
+if large == 0:
+    print(0)
+else:    
+    print(x_pos * (y_max - y_min + 1))
