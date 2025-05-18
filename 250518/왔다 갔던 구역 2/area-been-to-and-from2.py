@@ -16,7 +16,7 @@ for i in range(n):
             line[start] += 1
             start += 1
     else:
-        for j in range(x[i], 0, -1):
+        for j in range(x[i], 1, -1):
             line[start] += 1
             start -= 1
 
