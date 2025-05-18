@@ -12,12 +12,12 @@ start = 499
 
 for i in range(n):
     if dir[i] == 'R':
-        for j in range(x[i] - 1):
+        for j in range(x[i]):
             line[start] += 1
             start += 1
     else:
-        for j in range(x[i], 1, -1):
+        for j in range(x[i], 0, -1):
             line[start] += 1
             start -= 1
 
-print(line.count(max(line)))
+print(1000 - line.count(0) - line.count(1))
