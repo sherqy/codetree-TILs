@@ -5,8 +5,7 @@ commands = [tuple(map(int, input().split())) for _ in range(k)]
 block = [0] * n
 
 for i, j in commands:
-    for l in range(i, j + 1):
+    for l in range(i - 1, j):
         block[l] += 1
-        print(l)
 
 print(max(block))
