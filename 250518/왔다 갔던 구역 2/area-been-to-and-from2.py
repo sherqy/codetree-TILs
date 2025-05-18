@@ -7,8 +7,8 @@ for _ in range(n):
     dir.append(di)
 
 # Please write your code here.
-line = [0] * 1000
-start = 499
+line = [0] * 1001
+start = 500
 
 for i in range(n):
     if dir[i] == 'R':
@@ -16,8 +16,8 @@ for i in range(n):
             line[start] += 1
             start += 1
     else:
-        for j in range(x[i], 1, -1):
-            line[start] += 1
+        for j in range(x[i], 0, -1):
             start -= 1
+            line[start] += 1  
 
-print(1000 - line.count(0) - line.count(1))
+print(1001 - line.count(0) - line.count(1))
