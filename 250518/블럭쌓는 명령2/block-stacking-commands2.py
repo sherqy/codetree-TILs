@@ -7,6 +7,6 @@ block = [0] * n
 for i, j in commands:
     for l in range(i, j + 1):
         block[l] += 1
-        print(block)
+        print(l)
 
 print(max(block))
