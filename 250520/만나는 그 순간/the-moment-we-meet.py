@@ -2,8 +2,11 @@ n, m = map(int, input().split())
 
 a = [0] * 1000000
 b = [0] * 1000000
+a_final = 0
+b_final = 0
 pos = 0
 index = 0
+ans = -1
 
 for _ in range(n):
     direction, time = input().split()
@@ -18,6 +21,7 @@ for _ in range(n):
             index += 1
             a[index] = pos
 
+a_final = index
 pos = 0
 index = 0
 
@@ -34,7 +38,11 @@ for _ in range(m):
             index += 1
             b[index] = pos
 
-for i in range(1, len(a)):
+b_final = index
+
+for i in range(1, max(a_final, b_final)):
     if a[i] == b[i]:
-        print(i)
+        ans = i
         break
+
+print(ans)
