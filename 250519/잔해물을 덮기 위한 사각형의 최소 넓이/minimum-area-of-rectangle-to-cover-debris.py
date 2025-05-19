@@ -8,6 +8,7 @@ x_min = 2002
 x_max = 0
 y_min = 2002
 y_max = 0
+large = 0
 
 for i in range(2):
     for j in range(x1[i] + 1000, x2[i] + 1000):
@@ -28,5 +29,9 @@ for i in range(2001):
                 y_max = i + 1
             if i <= y_min:
                 y_min = i
+            large += 1
 
-print((x_max - x_min) * (y_max - y_min))
+if large > 0:
+    print((x_max - x_min) * (y_max - y_min))
+else:
+    print(0)
