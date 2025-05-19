@@ -22,7 +22,14 @@ for _ in range(m):
         pos_b[time] += pos_b[time - 1] + (1 if d == 'R' else -1)
         time += 1
 
-for i in range(1, max(max_time, time) + 1):
+for i in range(min(max_time, time), max(max_time, time)):
+    if pos_a[i] == 0:
+        pos_a[i] = pos_a[i - 1]
+    if pos_b[i] == 0:
+        pos_b[i] = pos_b[i - 1]
+
+
+for i in range(1, max(max_time, time)):
     if pos_a[i - 1] != pos_b[i - 1] and pos_a[i] == pos_b[i]:
         count += 1
 
