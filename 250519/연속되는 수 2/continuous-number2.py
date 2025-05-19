@@ -11,4 +11,4 @@ for i in range(n):
         ans = max(cnt, ans)
         cnt = 1
 
-print(ans)
+print(max(ans, cnt))
