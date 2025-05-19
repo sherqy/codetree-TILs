@@ -20,13 +20,13 @@ for i in range(2):
 for i in range(2001):
     for j in range(2001):
         if cross[i][j] == 1:
-            if j > x_max:
+            if j >= x_max:
                 x_max = j + 1
-            if j < x_min:
+            if j <= x_min:
                 x_min = j
-            if i > y_max:
+            if i >= y_max:
                 y_max = i + 1
-            if i < y_min:
+            if i <= y_min:
                 y_min = i
 
 print((x_max - x_min) * (y_max - y_min))
