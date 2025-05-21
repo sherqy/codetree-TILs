@@ -12,15 +12,12 @@ def in_range(x, y):
 
 for i in range(2, n * m + 1):
     nx, ny = x + dxs[direction], y + dys[direction]
-    if in_range(nx, ny) and arr[nx][ny] == 0:
-        arr[nx][ny] = i
-        x, y = nx, ny
-    else:
-        direction = (direction + 1) % 4
-        nx, ny = x + dxs[direction], y + dys[direction]
-        arr[nx][ny] = i
-        x, y = nx, ny
     
+    if not in_range(nx, ny) or arr[nx][ny] == 0:
+        direction = (direction + 1) % 4
+    
+    x, y = x + dxs[direction], y + dys[direction]
+    arr[x][y] = i
 
 for i in arr:
     print(*i)
