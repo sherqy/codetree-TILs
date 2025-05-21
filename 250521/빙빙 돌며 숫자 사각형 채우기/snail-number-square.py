@@ -13,7 +13,7 @@ def in_range(x, y):
 for i in range(2, n * m + 1):
     nx, ny = x + dxs[direction], y + dys[direction]
     
-    if not in_range(nx, ny) or arr[nx][ny] == 0:
+    if not in_range(nx, ny) or arr[nx][ny] != 0:
         direction = (direction + 1) % 4
     
     x, y = x + dxs[direction], y + dys[direction]
