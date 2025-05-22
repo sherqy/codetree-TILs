@@ -19,6 +19,8 @@ def in_range(nx, ny):
 
 def move(x, y, move_dir):
     global dxs, dys
+    if 0 <= dxs < 4 and 0 <= dys < 4:
+        print(dxs, dys)
     return x + dxs[move_dir], y + dys[move_dir], move_dir
 
 while in_range(x, y):
