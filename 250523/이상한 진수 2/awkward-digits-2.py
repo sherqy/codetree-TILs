@@ -1,19 +1,12 @@
-a = input()
-b = []
+a = list(map(int, list(input())))
 
-# Please write your code here.
+max_val = 0
+
 for i in range(len(a)):
-    if a[i] == '0':
-        b.append('1')
-        break
-    else:
-        b.append(a[i])
+    a[i] = int(not a[i])
 
-b.append(a[i + 1 : ])
+    max_val = max(max_val, int(''.join(map(str, a)), 2))
 
-if a == '1':
-    print(0)
-elif not('0' in a):
-    print(int(''.join(a[ : len(a) - 1] + '0'), 2))
-else:
-    print(int(''.join(b), 2))
+    a[i] = int(not a[i])
+
+print(max_val)
