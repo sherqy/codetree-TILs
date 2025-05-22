@@ -1,18 +1,20 @@
 n = int(input())
 grid = [list(input()) for _ in range(n)]
-k = int(input())
+k = int(input()) - 1
 
 dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
-direction = (k - 1) // n
+direction = k // n
 x, y = 0, 0
 ans = 0
 
-for i in range(2, k + 1):
-    if i % n == 1:
+for i in range(1, k + 1):
+    if i % n == 0:
         continue
     else:
-        x += dxs[i // (n + 1)]
-        y += dys[i // (n + 1)]
+        x += dxs[i // n]
+        y += dys[i // n]
+
+print(x, y)
 
 cross = [[0, -1], [-1, 0], [1, 0], [0, 1]]
 
