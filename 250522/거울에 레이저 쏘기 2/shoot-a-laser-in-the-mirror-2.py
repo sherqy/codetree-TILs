@@ -3,7 +3,7 @@ grid = [list(input()) for _ in range(n)]
 k = int(input()) - 1
 
 dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
-direction = k // n + 1
+direction = (k // n + 1) % 4
 x, y = 0, 0
 ans = 0
 
@@ -19,6 +19,8 @@ def in_range(nx, ny):
 
 def move(x, y, move_dir):
     global dxs, dys
+    if not (0 <= move_dir < 4):
+        print(move_dir)
     return x + dxs[move_dir], y + dys[move_dir], move_dir
 
 while in_range(x, y):
