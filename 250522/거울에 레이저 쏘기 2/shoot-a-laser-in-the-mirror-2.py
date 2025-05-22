@@ -26,6 +26,6 @@ while in_range(x, y):
     if grid[x][y] == '\\':
         x, y, direction = move(x, y, direction ^ 1)
     else:
-        x, y, direction = move(x, y, 3 - direction)
+        x, y, direction = move(x, y, (3 - direction) % 4)
 
 print(ans)
