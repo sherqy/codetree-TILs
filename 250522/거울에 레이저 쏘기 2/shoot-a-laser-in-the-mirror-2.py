@@ -14,8 +14,6 @@ for i in range(1, k + 1):
         x += dxs[i // n]
         y += dys[i // n]
 
-print(x, y)
-
 cross = [[0, -1], [-1, 0], [1, 0], [0, 1]]
 
 def in_range(nx, ny):
