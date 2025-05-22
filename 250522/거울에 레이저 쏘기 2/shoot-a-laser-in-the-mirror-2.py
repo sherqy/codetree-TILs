@@ -3,16 +3,16 @@ grid = [list(input()) for _ in range(n)]
 k = int(input())
 
 dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
-direction = k // 4
+direction = (k - 1) // n
 x, y = 0, 0
 ans = 0
 
 for i in range(2, k + 1):
-    if i % 3 == 1:
+    if i % n == 1:
         continue
     else:
-        x += dxs[i // 4]
-        y += dys[i // 4]
+        x += dxs[i // (n + 1)]
+        y += dys[i // (n + 1)]
 
 cross = [[0, -1], [-1, 0], [1, 0], [0, 1]]
 
