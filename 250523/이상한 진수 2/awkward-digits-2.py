@@ -11,4 +11,7 @@ for i in range(len(a)):
 
 b.append(a[i + 1 : ])
 
-print(int(''.join(b), 2))
+if a == '1':
+    print(0)
+else:
+    print(int(''.join(b), 2))
