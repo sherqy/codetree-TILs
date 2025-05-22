@@ -13,4 +13,7 @@ for i in range(1, R - 1):
                     if start == grid[k][l]:
                         ans += 1
 
-print(ans)
+if start == grid[R - 1][C - 1]:
+    print(0)
+else:
+    print(ans)
