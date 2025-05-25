@@ -1,4 +1,5 @@
-s, a = map(int, input().split())
+s = int(input())
+a = int(input())
 
 if s == 0 and a >= 19:
     print("MAN")
