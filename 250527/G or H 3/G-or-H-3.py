@@ -6,7 +6,7 @@ max_pos = 0
 
 for _ in range(1, n + 1):
     pos, char = input().split()
-    max_pos = max(pos, max_pos)
+    max_pos = max(int(pos), max_pos)
     x[int(pos)] = char
 
 # Please write your code here.
