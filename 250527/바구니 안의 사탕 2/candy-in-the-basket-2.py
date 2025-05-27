@@ -4,9 +4,9 @@ ans = 0
 
 for _ in range(N):
     c, p = map(int, input().split())
-    pos[p] = c
+    pos[p] += c
 
-for i in range(K, 100 - K + 1):
+for i in range(K, 102 - K):
     ans = max(sum(pos[i - K : i + K + 1]), ans)
 
 print(ans)
