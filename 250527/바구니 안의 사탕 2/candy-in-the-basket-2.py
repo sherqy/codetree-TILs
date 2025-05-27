@@ -6,7 +6,7 @@ for _ in range(N):
     c, p = map(int, input().split())
     pos[p] += c
 
-for i in range(K, 102 - K):
-    ans = max(sum(pos[i - K : i + K + 1]), ans)
+for i in range(0, abs(102 - 2 * K)):
+    ans = max(sum(pos[i : i + 2 * K + 1]), ans)
 
 print(ans)
