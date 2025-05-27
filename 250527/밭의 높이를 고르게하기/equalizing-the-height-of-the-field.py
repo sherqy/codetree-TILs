@@ -4,7 +4,7 @@ N, H, T = map(int, input().split())
 arr = list(map(int, input().split()))
 min_val = sys.maxsize
 
-for i in range(N - T):
+for i in range(N - T + 1):
     h = 0
     
     for j in range(i, i + T):
