@@ -11,11 +11,9 @@ for _ in range(1, n + 1):
         x[int(pos)] = 1
     elif char == 'H':
         x[int(pos)] = 2
-    else:
-        x[int(pos)] = 0
 
 # Please write your code here.
-for i in range(1, max_pos - k + 1):
+for i in range(1, 10000 - k + 1):
     ans = max(sum(x[i : i + k + 1]), ans)
 
 print(ans)
