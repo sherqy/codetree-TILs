@@ -4,9 +4,9 @@ a2, b2, c2 = map(int, input().split())
 ans = 0
 
 # Please write your code here.
-for i in range(1, N + 1):
-    for j in range(1, N + 1):
-        for k in range(1, N + 1):
+for i in range(1, n + 1):
+    for j in range(1, n + 1):
+        for k in range(1, n + 1):
             if (abs(a1 - i) <= 2 or abs(a1 - i) >= n - 2) and (abs(b1 - j) <= 2 or abs(b1 - j) >= n - 2) and \
                (abs(c1 - k) <= 2 or abs(c1 - k) >= n - 2):
                 ans += 1
