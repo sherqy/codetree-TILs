@@ -4,7 +4,7 @@ abilities = list(map(int, input().split()))
 ans = sys.maxsize
 
 def get_diff(x, y, z):
-    sum1 = x + y + z
+    sum1 = abilities[x] + abilities[y] + abilities[z]
     sum2 = abs(sum(abilities) - sum1)
     return abs(sum1 - sum2)
 
