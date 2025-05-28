@@ -11,7 +11,7 @@ for i in range(5):
 
         for k in range(5):
             for l in range(k + 1, 6):
-                if i != k and j != l:
+                if i != k and i != l and j != k and j != l:
                     sum2 = ability[k] + ability[l]
                     sum3 = sum(ability) - sum1 - sum2
                     ans = min(max(sum1, sum2, sum3) - min(sum1, sum2, sum3), ans)
