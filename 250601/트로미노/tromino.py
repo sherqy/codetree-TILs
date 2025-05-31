@@ -6,7 +6,7 @@ def nieun(x, y):
     z = grid[x][y] + grid[x][y + 1] + grid[x + 1][y] + grid[x + 1][y + 1]
     max_val = 0
 
-    for a, b in zip([0, 1], [0, 1]):
+    for a, b in zip([0, 0, 1, 1], [0, 1, 0, 1]):
         max_val = max(max_val, z - grid[x + a][y + b])
 
     return max_val
