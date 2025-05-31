@@ -1,30 +1,35 @@
+import sys
+
+dxs=[-1,-1,1,1]
+dys=[1,-1,-1,1]
+
+def in_range(nx, ny):
+    return 0 <= nx < n and 0 <= ny < n
+
+def get_score(x, y, w, h):
+    move_size = [w, h, w, h]
+    
+    total = 0
+    for dx, dy, length in zip(dxs, dys, move_size):
+        for _ in range(length):
+            x = x + dx
+            y = y + dy
+            
+            if not in_range(x, y):
+                return 0
+
+            total += board[x][y]
+    
+    return total
+            
 n = int(input())
-grid = [list(map(int, input().split())) for _ in range(n)]
-dxs, dys = [-1, 1, -1, 1], [1, -1, -1, 1]
+board = [list(map(int, input().split())) for _ in range(n)]
 ans = 0
 
-def in_range(x, y):
-    return 0 <= x < n and 0 <= y < n
-
-def make(x, y):
-    arr = []
-    direction = 0
-    cnt = 0
-
-    while len(arr) != 4:
-        if not in_range(x + dxs[direction], y + dys[direction]):
-            arr.append(cnt)
-            direction += 1
-            cnt = 0
-        else:
-            cnt += grid[x][y]
-            x += dxs[direction]
-            y += dys[direction]
-
-    return sum(arr) if 0 not in arr else 0
-    
 for i in range(n):
     for j in range(n):
-        ans = max(ans, make(i, j))
-
+        for w in range(1, n):
+            for h in range(1, n):
+                ans = max(ans, get_score(i, j, w, h))    
+    
 print(ans)
