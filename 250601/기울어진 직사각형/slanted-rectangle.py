@@ -1,6 +1,6 @@
 n = int(input())
 grid = [list(map(int, input().split())) for _ in range(n)]
-dxs, dys = [1, 1, -1, -1], [1, -1, -1, 1]
+dxs, dys = [-1, 1, -1, 1], [1, -1, -1, 1]
 ans = 0
 
 def in_range(x, y):
