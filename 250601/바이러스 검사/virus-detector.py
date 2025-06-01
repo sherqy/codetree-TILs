@@ -4,11 +4,10 @@ lmax, mmax = map(int, input().split())
 ans = 0
 
 for i in cust:
-    a = 0
+    a = i - lmax
+    ans += 1
 
-    if i - lmax <= 0:
-        ans += 1
-    else:
-        ans += (i - lmax) // mmax + 2
+    if a > 0:
+        ans += a // mmax if a % mmax == 0 else a //mmax + 1
 
 print(ans)
