@@ -1,6 +1,5 @@
 n = int(input())
 arr = list(map(int, input().split()))
-g = arr[0]
 
 def gcd(x, y):
     if y == 0:
@@ -8,11 +7,12 @@ def gcd(x, y):
     return gcd(y, x % y)
 
 def lcm(x, y):
+    if len(arr) == 1:
+        return arr[0]
     if y == len(arr) - 1:
-        return 1
-    return lcm(x, y + 1) * arr[y] // x
+        return x
 
-for i in range(len(arr) - 1):
-    g = gcd(g, arr[i + 1])
+    x = x * arr[y + 1] // gcd(x, arr[y + 1]) 
+    return lcm(x, y + 1)
 
-print(lcm(g, 0))
+print(lcm(arr[0], 0))
