@@ -13,6 +13,10 @@ def dfs(x):
         if grid[x][curr] == 1 and not visited[curr]:
             visited[curr] = True
             a = a + 1 + dfs(curr)
-    return a
+    
+    return a if a > 0 else 0
 
-print(dfs(0) - 1)
+if dfs(0) == 0:
+    print(0)
+else:
+    print(dfs(0) - 1)
