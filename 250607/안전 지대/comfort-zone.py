@@ -34,6 +34,6 @@ for k in range(1, 101):
         continue
 
 if len(ans) != 0:
-    print(max(ans), ans.index(max(ans)) + 1)
+    print(ans.index(max(ans)) + 1, max(ans))
 else:
     print(1, 0)
