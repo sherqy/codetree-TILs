@@ -1,43 +1,35 @@
 n = int(input())
-grid = [
-    list(map(int, input().split()))
-    for _ in range(n)
-]
-visited = [[0]*n for _ in range(n)]
-
+grid = [list(map(int, input().split())) for _ in range(n)]
+visited = [[False] * n for _ in range(n)]
 cnt = 0
-people = []
+ans = []
+
+def in_range(x, y):
+    return 0 <= x < n and 0 <= y < n
 
 def dfs(x, y):
     global cnt
-    visited[x][y] = 1
+    dxs, dys = [-1, 0, 1, 0], [0, 1, 0, -1]
+    visited[x][y] = True
     cnt += 1
 
-    dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
+    for nx, ny in zip(dxs, dys):
+        new_x, new_y = x + nx, y + ny
 
-    for dx, dy in zip(dxs, dys):
-        new_x, new_y = x + dx, y + dy
-        if can_go(new_x, new_y):
+        if in_range(new_x, new_y) and visited[new_x][new_y] == False and grid[new_x][new_y] == 1:
+            visited[new_x][new_y] = True
             dfs(new_x, new_y)
-
-def can_go(x, y):
-    if x >= n or y >= n:
-        return False
-    if visited[x][y] or grid[x][y] == 0:
-        return False
-    if x < 0 or y < 0: 
-        return False
-    return True
 
 
 for i in range(n):
     for j in range(n):
-        if can_go(i, j):
-            cnt = 0
+        if visited[i][j] == False and grid[i][j] == 1:
             dfs(i, j)
-            people.append(cnt)
 
-people.sort()
-print(len(people))
-for i in range(len(people)):
-    print(people[i])
+            if cnt != 0:
+                ans.append(cnt)
+
+            cnt = 0
+
+print(len(ans))
+print(*sorted(ans), sep = '\n')
