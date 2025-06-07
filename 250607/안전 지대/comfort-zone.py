@@ -28,7 +28,12 @@ for k in range(1, 101):
         for j in range(m):
             if in_range(i, j, k):
                 ans_1.append(dfs(i, j, k))
+    if len(ans_1) != 0:
+        ans.append(sum(ans_1)) 
+    else:
+        continue
 
-    ans.append(sum(ans_1))
-
-print(max(ans), ans.index(max(ans)) + 1)
+if len(ans) != 0:
+    print(max(ans), ans.index(max(ans)) + 1)
+else:
+    print(1, 0)
