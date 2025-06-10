@@ -1,18 +1,30 @@
+MAX_K = 6
+MAX_DIGIT = 10
+
+# 변수 선언 및 입력
 n = int(input())
 arr = list(map(int, input().split()))
 
-for i in range(5, -1, -1):
-    arr_new = list([] for _ in range(10))
 
-    for j in range(len(arr)):
-        arr[j] = str(arr[j]).zfill(6)
-        arr_new[int(arr[j][i])].append(arr[j])
+def radix_sort():
+    global arr
 
-    store_arr = []
-    for j in range(10):
-        for k in range(len(arr_new[j])):
-            store_arr.append(int(arr_new[j][k]))
+    p = 1
+    for pos in range(MAX_K):
+        arr_new = [[] for _ in range(MAX_DIGIT)]
+        for elem in arr:
+            digit = (elem // p) % 10
+            arr_new[digit].append(elem)
 
-    arr = store_arr
+        arr = []
+        for digit in range(MAX_DIGIT):
+            for elem in arr_new[digit]:
+                arr.append(elem)
+        
+        p *= 10
 
-print(*arr)
+
+radix_sort()
+
+for elem in arr:
+    print(elem, end=" ")
